@@ -24,8 +24,6 @@ namespace OpenTSDBSample
 
         }
 
-
-
     }
 
     class Test
