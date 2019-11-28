@@ -16,7 +16,7 @@ namespace OpenTSDBSample
         static void Main(string[] args)
         {
             Console.WriteLine("Init Api Url");
-            ApiUrlConfig.ChangeBaseUrl("http://codebim.cn:4242/");
+            ApiUrlConfig.ChangeBaseUrl("http://192.168.1.12:4242/");
            
             Test test = new Test();
             test.Run();
