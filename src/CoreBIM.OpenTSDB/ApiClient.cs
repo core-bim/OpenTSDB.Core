@@ -33,13 +33,6 @@ namespace OpenTSDB.Core
             return await PostAsync<T>(endpoint, inputDto, queryParameters,  true);
         }
 
-        /// <summary>
-        /// Makes POST request without authentication token.
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="endpoint"></param>
-        /// <param name="inputDto"></param>
-        /// <returns></returns>
         public async Task<T> PostAnonymousAsync<T>(string endpoint, object inputDto)
         {
             return await PostAsync<T>(endpoint, inputDto, null, true);
@@ -108,12 +101,6 @@ namespace OpenTSDB.Core
             await PostAsync(endpoint, inputDto, null,  true);
         }
 
-        /// <summary>
-        /// Makes POST request without authentication token.
-        /// </summary>
-        /// <param name="endpoint"></param>
-        /// <param name="inputDto"></param>
-        /// <returns></returns>
         public async Task PostAnonymousAsync(string endpoint, object inputDto)
         {
             await PostAsync(endpoint, inputDto, null, true);
@@ -142,25 +129,12 @@ namespace OpenTSDB.Core
             return await GetAsync<T>(endpoint, null);
         }
 
-        /// <summary>
-        /// Makes GET request without authentication token.
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="endpoint"></param>
-        /// <returns></returns>
+
         public async Task<T> GetAnonymousAsync<T>(string endpoint)
         {
             return await GetAsync<T>(endpoint, null, true);
         }
 
-        /// <summary>
-        /// get方法
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="endpoint">服务地址</param>
-        /// <param name="queryName">get方法中需要传入的参数名</param>
-        /// <param name="queryParameters">get方法中需要传入的参数值</param>
-        /// <returns></returns>
         public async Task<T> GetMethodByGet<T>(string endpoint, string queryName, object queryParameters)
         {
             var httpResponse = GetClient()
