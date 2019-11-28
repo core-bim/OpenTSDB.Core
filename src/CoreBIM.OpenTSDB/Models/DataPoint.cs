@@ -3,7 +3,8 @@ using System.Text;
 
 namespace OpenTSDB.Core.Models
 {
-    //
+
+    [DataContract]
     public class DataPoint<T>
     {
         /// <summary>
@@ -33,8 +34,8 @@ namespace OpenTSDB.Core.Models
         /// A map of tag name/tag value pairs. At least one pair must be supplied.
         /// </summary>
         /// <example>{"host":"web01"}</example>
-        [DataMember(Name = "tags", Order = 99)]
-        public TagsCollection Tags { get; set; } = TagsCollection.New();
+        [DataMember(Name = "tags")]
+        public Tags Tags { get; set; } = Tags.Create();
     }
 }
 

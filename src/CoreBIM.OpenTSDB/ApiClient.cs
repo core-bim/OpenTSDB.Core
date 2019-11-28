@@ -15,23 +15,12 @@ namespace OpenTSDB.Core
 
         public async Task<T> PostAsync<T>(string endpoint)
         {
-            return await PostAsync<T>(endpoint, null, null);
-        }
-
-        public async Task<T> PostAnonymousAsync<T>(string endpoint)
-        {
-            return await PostAsync<T>(endpoint, null, null);
+            return await PostAsync<T>(endpoint, string.Empty, string.Empty);
         }
 
         public async Task<T> PostAsync<T>(string endpoint, object inputDto)
         {
-            return await PostAsync<T>(endpoint, inputDto, null);
-        }
-
-
-        public async Task<T> PostAnonymousAsync<T>(string endpoint, object inputDto)
-        {
-            return await PostAsync<T>(endpoint, inputDto, null);
+            return await PostAsync<T>(endpoint, inputDto, string.Empty);
         }
 
         public async Task<T> PostAsync<T>(string endpoint, object inputDto, object queryParameters)
@@ -68,17 +57,17 @@ namespace OpenTSDB.Core
 
         public async Task PostAsync(string endpoint)
         {
-            await PostAsync(endpoint, null, null, true);
+            await PostAsync(endpoint, string.Empty, string.Empty, true);
         }
 
         public async Task PostAsync(string endpoint, object inputDto)
         {
-            await PostAsync(endpoint, inputDto, null, true);
+            await PostAsync(endpoint, inputDto, string.Empty, true);
         }
 
         public async Task PostAnonymousAsync(string endpoint, object inputDto)
         {
-            await PostAsync(endpoint, inputDto, null, true);
+            await PostAsync(endpoint, inputDto, string.Empty, true);
         }
 
         public async Task PostAsync(string endpoint, object inputDto, object queryParameters)
@@ -101,7 +90,7 @@ namespace OpenTSDB.Core
 
         public async Task<T> GetAsync<T>(string endpoint)
         {
-            return await GetAsync<T>(endpoint, null);
+            return await GetAsync<T>(endpoint, string.Empty);
         }
 
 
@@ -131,7 +120,7 @@ namespace OpenTSDB.Core
 
         public async Task GetAsync(string endpoint)
         {
-            await GetAsync(endpoint, null);
+            await GetAsync(endpoint, string.Empty);
         }
 
 
@@ -149,7 +138,7 @@ namespace OpenTSDB.Core
 
         public async Task DeleteAsync(string endpoint)
         {
-            await DeleteAsync(endpoint, null);
+            await DeleteAsync(endpoint, string.Empty);
         }
 
         public async Task DeleteAsync(string endpoint, object queryParameters)
@@ -175,7 +164,7 @@ namespace OpenTSDB.Core
 
         public async Task<T> DeleteAsync<T>(string endpoint)
         {
-            return await DeleteAsync<T>(endpoint, null);
+            return await DeleteAsync<T>(endpoint, string.Empty);
         }
 
         public async Task<T> DeleteAsync<T>(string endpoint, object queryParameters)
@@ -193,12 +182,12 @@ namespace OpenTSDB.Core
 
         public async Task<T> PutAsync<T>(string endpoint)
         {
-            return await PutAsync<T>(endpoint, null, null);
+            return await PutAsync<T>(endpoint, string.Empty, string.Empty);
         }
 
         public async Task<T> PutAsync<T>(string endpoint, object inputDto)
         {
-            return await PutAsync<T>(endpoint, inputDto, null);
+            return await PutAsync<T>(endpoint, inputDto, string.Empty);
         }
 
 
@@ -219,12 +208,12 @@ namespace OpenTSDB.Core
 
         public async Task PutAsync(string endpoint)
         {
-            await PutAsync(endpoint, null, null);
+            await PutAsync(endpoint, string.Empty, string.Empty);
         }
 
         public async Task PutAsync(string endpoint, object inputDto)
         {
-            await PutAsync(endpoint, inputDto, null);
+            await PutAsync(endpoint, inputDto, string.Empty);
         }
 
         public async Task PutAsync(string endpoint, object inputDto, object queryParameters)
@@ -264,14 +253,6 @@ namespace OpenTSDB.Core
             _client.WithHeader("Content-Type", "application/json");
         }
 
-        private void ValidateAbpResponse<T>(T response)
-        {
-            if (response == null)
-            {
-                return;
-            }
-
-        }
         #endregion
 
         #region Dispose
