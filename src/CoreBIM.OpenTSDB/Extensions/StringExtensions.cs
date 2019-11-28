@@ -1,23 +1,25 @@
 ﻿using System;
-
-public static class StringExtensions
+namespace OpenTSDB.Core.Extensions
 {
-    public static string EnsureEndsWith(this string str, char c)
+    public static partial class StringExtensions
     {
-        return str.EnsureEndsWith(c, StringComparison.Ordinal);
-    }
-    public static string EnsureEndsWith(this string str, char c, StringComparison comparisonType)
-    {
-        if (str == null)
+        public static string EnsureEndsWith(this string str, char c)
         {
-            throw new ArgumentNullException("str");
+            return str.EnsureEndsWith(c, StringComparison.Ordinal);
         }
-        if (str.EndsWith(c.ToString(), comparisonType))
+        public static string EnsureEndsWith(this string str, char c, StringComparison comparisonType)
         {
-            return str;
+            if (str == null)
+            {
+                throw new ArgumentNullException("str");
+            }
+            if (str.EndsWith(c.ToString(), comparisonType))
+            {
+                return str;
+            }
+            return str + c.ToString();
         }
-        return str + c.ToString();
-    }
 
 
+    }
 }

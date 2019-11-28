@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OpenTSDB.Core.Extensions;
+using System;
 
 namespace OpenTSDB.Core
 {

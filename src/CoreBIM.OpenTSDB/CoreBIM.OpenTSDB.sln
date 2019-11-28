@@ -5,6 +5,12 @@ VisualStudioVersion = 16.0.29519.87
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenTSDB.Core", "OpenTSDB.Core.csproj", "{A525A9EF-5293-479D-8EF2-5CC754C65BF7}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sample", "Sample", "{341F994F-D514-4E1B-AB5F-BF7D74699934}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Src", "Src", "{854D53EB-A1D9-4214-9DEF-011B62599A0C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenTSDBSample", "..\OpenTSDBSample\OpenTSDBSample.csproj", "{5D713F7D-251D-4739-8627-F6308719747D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,9 +21,17 @@ Global
 		{A525A9EF-5293-479D-8EF2-5CC754C65BF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A525A9EF-5293-479D-8EF2-5CC754C65BF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A525A9EF-5293-479D-8EF2-5CC754C65BF7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D713F7D-251D-4739-8627-F6308719747D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D713F7D-251D-4739-8627-F6308719747D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D713F7D-251D-4739-8627-F6308719747D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D713F7D-251D-4739-8627-F6308719747D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A525A9EF-5293-479D-8EF2-5CC754C65BF7} = {854D53EB-A1D9-4214-9DEF-011B62599A0C}
+		{5D713F7D-251D-4739-8627-F6308719747D} = {341F994F-D514-4E1B-AB5F-BF7D74699934}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A2288E08-977E-47BA-A91F-7764BA0A2448}

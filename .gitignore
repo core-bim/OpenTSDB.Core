@@ -5,3 +5,5 @@
 /src/CoreBIM.OpenTSDB/.vs/CoreBIM.OpenTSDB
 /src/CoreBIM.OpenTSDB/obj
 /src/CoreBIM.OpenTSDB/bin/Debug
+/src/OpenTSDBSample/obj
+/src/OpenTSDBSample/bin/Debug/netcoreapp3.0
