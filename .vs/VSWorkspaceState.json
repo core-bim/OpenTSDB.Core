@@ -2,8 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\docs",
-    "\\src"
+    "\\src",
+    "\\src\\sample"
   ],
-  "SelectedNode": "\\src",
+  "SelectedNode": "\\src\\sample",
   "PreviewInSolutionExplorer": false
 }
