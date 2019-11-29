@@ -1,0 +1,20 @@
+{
+  "items": [
+    {
+      "text": "README",
+      "path": "README.md"
+    },
+    {
+      "path": "Nightly-Builds.md",
+      "text": "OpenTSDB HTTP API"
+    },
+    {
+      "text": "Nightly Builds",
+      "path": "Nightly-Builds.md"
+    },
+    {
+      "text": "Contribution Guide",
+      "path": "Contribution/Index.md"
+    }
+  ]
+}
