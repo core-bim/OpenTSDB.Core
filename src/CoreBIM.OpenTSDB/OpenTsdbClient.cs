@@ -18,17 +18,17 @@ namespace OpenTSDB.Core
             return await PostAsync<T>(endpoint, string.Empty, string.Empty);
         }
 
-        public async Task<T> PostAsync<T>(string endpoint, object inputDto)
+        public async Task<T> PostAsync<T>(string endpoint, object RequestDto)
         {
-            return await PostAsync<T>(endpoint, inputDto, string.Empty);
+            return await PostAsync<T>(endpoint, RequestDto, string.Empty);
         }
 
-        public async Task<T> PostAsync<T>(string endpoint, object inputDto, object queryParameters)
+        public async Task<T> PostAsync<T>(string endpoint, object RequestDto, object queryParameters)
         {
             var httpResponse = GetClient()
                 .Request(endpoint)
                 .SetQueryParams(queryParameters)
-                .PostJsonAsync(inputDto);
+                .PostJsonAsync(RequestDto);
 
             return await httpResponse.ReceiveJson<T>();
         }
@@ -60,28 +60,28 @@ namespace OpenTSDB.Core
             await PostAsync(endpoint, string.Empty, string.Empty, true);
         }
 
-        public async Task PostAsync(string endpoint, object inputDto)
+        public async Task PostAsync(string endpoint, object RequestDto)
         {
-            await PostAsync(endpoint, inputDto, string.Empty, true);
+            await PostAsync(endpoint, RequestDto, string.Empty, true);
         }
 
-        public async Task PostAnonymousAsync(string endpoint, object inputDto)
+        public async Task PostAnonymousAsync(string endpoint, object RequestDto)
         {
-            await PostAsync(endpoint, inputDto, string.Empty, true);
+            await PostAsync(endpoint, RequestDto, string.Empty, true);
         }
 
-        public async Task PostAsync(string endpoint, object inputDto, object queryParameters)
+        public async Task PostAsync(string endpoint, object RequestDto, object queryParameters)
         {
-            await PostAsync(endpoint, inputDto, queryParameters, true);
+            await PostAsync(endpoint, RequestDto, queryParameters, true);
         }
 
-        public async Task PostAsync(string endpoint, object inputDto, object queryParameters,
+        public async Task PostAsync(string endpoint, object RequestDto, object queryParameters,
             bool stripAjaxResponseWrapper)
         {
             await GetClient()
                   .Request(endpoint)
                   .SetQueryParams(queryParameters)
-                  .PostJsonAsync(inputDto);
+                  .PostJsonAsync(RequestDto);
         }
 
         #endregion
@@ -185,18 +185,18 @@ namespace OpenTSDB.Core
             return await PutAsync<T>(endpoint, string.Empty, string.Empty);
         }
 
-        public async Task<T> PutAsync<T>(string endpoint, object inputDto)
+        public async Task<T> PutAsync<T>(string endpoint, object RequestDto)
         {
-            return await PutAsync<T>(endpoint, inputDto, string.Empty);
+            return await PutAsync<T>(endpoint, RequestDto, string.Empty);
         }
 
 
-        public async Task<T> PutAsync<T>(string endpoint, object inputDto, object queryParameters)
+        public async Task<T> PutAsync<T>(string endpoint, object RequestDto, object queryParameters)
         {
             var httpResponse = GetClient()
                 .Request(endpoint)
                 .SetQueryParams(queryParameters)
-                .PutJsonAsync(inputDto);
+                .PutJsonAsync(RequestDto);
 
             return await httpResponse.ReceiveJson<T>();
         }
@@ -211,17 +211,17 @@ namespace OpenTSDB.Core
             await PutAsync(endpoint, string.Empty, string.Empty);
         }
 
-        public async Task PutAsync(string endpoint, object inputDto)
+        public async Task PutAsync(string endpoint, object RequestDto)
         {
-            await PutAsync(endpoint, inputDto, string.Empty);
+            await PutAsync(endpoint, RequestDto, string.Empty);
         }
 
-        public async Task PutAsync(string endpoint, object inputDto, object queryParameters)
+        public async Task PutAsync(string endpoint, object RequestDto, object queryParameters)
         {
             await GetClient()
                   .Request(endpoint)
                   .SetQueryParams(queryParameters)
-                  .PutJsonAsync(inputDto);
+                  .PutJsonAsync(RequestDto);
         }
 
         #endregion
