@@ -6,7 +6,7 @@ Access opentsdb database based on .Net core. Almost all OpenTSDB features are ac
 ```C#
  class Test
     {
-        ApiClient apiClient = new ApiClient();
+        OpenTsdbClient  apiClient = new OpenTsdbClient ();
         public async void Run()
         {
             var list = new List<DataPoint<float>>();
