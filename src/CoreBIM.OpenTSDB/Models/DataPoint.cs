@@ -1,24 +1,21 @@
-﻿using System.Runtime.Serialization;
-using System.Text;
+﻿using Newtonsoft.Json;
 
 namespace OpenTSDB.Core.Models
 {
-
-    [DataContract]
     public class DataPoint<T>
-    {
+     {
         /// <summary>
         /// The name of the metric you are storing
         /// </summary>
         /// <example>sys.cpu.nice</example>
-        [DataMember(Name = "metric")]
+        [JsonProperty("metric")]
         public string Metric { get; set; }
 
         /// <summary>
         /// A Unix epoch style timestamp in seconds or milliseconds. The timestamp must not contain non-numeric characters.
         /// </summary>
         /// <example>1365465600</example>
-        [DataMember(Name = "timestamp")]
+        [JsonProperty("timestamp")]
         public int Timestamp { get; set; }
 
         /// <summary>
@@ -26,7 +23,7 @@ namespace OpenTSDB.Core.Models
         /// DataType:Integer, Float, String
         /// </summary>
         /// <example>42.5</example>
-        [DataMember(Name = "value")]
+        [JsonProperty( "value")]
         public T Value { get; set; }
 
         /// <summary>
@@ -34,7 +31,7 @@ namespace OpenTSDB.Core.Models
         /// A map of tag name/tag value pairs. At least one pair must be supplied.
         /// </summary>
         /// <example>{"host":"web01"}</example>
-        [DataMember(Name = "tags")]
+        [JsonProperty( "tags")]
         public Tags Tags { get; set; } = Tags.Create();
     }
 }

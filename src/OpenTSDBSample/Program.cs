@@ -28,7 +28,7 @@ namespace OpenTSDBSample
 
     class Test
     {
-        ApiClient apiClient = new ApiClient();
+        OpenTsdbClient apiClient = new OpenTsdbClient();
         public async void Run()
         {
             var list = new List<DataPoint<float>>();

@@ -2,7 +2,6 @@
 
 namespace OpenTSDB.Core.Models
 {
-
     public class Tags : Dictionary<string, string>
     {
          const string _host = "host";

@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace OpenTSDB.Core
 {
-    public class ApiClient : IDisposable
+    public class OpenTsdbClient : IDisposable
     {
         private static FlurlClient _client;
         //Time out
