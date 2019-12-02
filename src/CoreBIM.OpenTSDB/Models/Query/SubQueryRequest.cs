@@ -21,7 +21,7 @@ namespace OpenTSDB.Core.Models.Query
         public string Downsample { get; set; }
 
         [JsonProperty("tags")]
-        public Tags Tags { get; set; }
+        public Dictionary<string, string> Tags { get; set; }
 
         [JsonProperty("filters")]
         public IEnumerable<string> Filters { get; set; }
