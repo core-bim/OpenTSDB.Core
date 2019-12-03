@@ -24,7 +24,7 @@ Access opentsdb database based on .Net core. Almost all OpenTSDB features are ac
 
         public static int ConvertDateTimeInt(System.DateTime time)
         {
-            System.DateTime startTime = TimeZone.CurrentTimeZone.ToLocalTime(new System.DateTime(1970, 1, 1));
+            System.DateTime startTime = new System.DateTime(1970, 1, 1);
             return (int)(time - startTime).TotalSeconds;
         }
     }
